@@ -5,6 +5,13 @@ Ideally omniflop and or fluxengine software would be used by the owner of said d
 
 Writing a modern 5.25" driver for each os would be the most difficult part i think. 
 
+# starting point ?
+https://github.com/defparam/PCI2Nano-RTL
+
+https://github.com/defparam/PCI2Nano-PCB
+
+uses a de10 nano, but would be simple to change
+
 # Why
 because it's fun, plus a pcie 5.25" fpga floppy controller would be extremely useful. tweeners or inbetween era pcs are often used for 5.25" data archival. these are becoming more expensive and less of them are around.
 
