@@ -20,7 +20,13 @@ you could have a modern pc with a bunch of these pcie flopfpga's each connected 
 # what chip to use
 any fpga that can do it, obviously youll need a schematic / pcb with protection / level shifters for the floppy drive and maybe pcie bus? external ram would be useful for buffered 5.25" stuff.
 
-i looked for off the shelf floppy controllers on modern industrial ISA supported motherboards, but couldn't find anything specific.
+maybe use super io floppy disk controllers, but that has it's own set of problems, like lack of avalibility for one. 
+
+i looked for off the shelf floppy controllers like FDC37C78 or FDC37C669 on modern industrial ISA supported motherboards. but couldn't find one, they all use integrated chipsets. which makes sense.
+
+# also dISApointment
+look into using the dISApointment tpm LPC bus to ISA adapter and maybe ISA floppy controllers would work.
+dma and irq are supported on the LPC bus on many 20 pin tpm pinouts, but may require hand soldering unpopulated lines on various mobos
 
 # other devices chips
 ## deviceside has a custom 5025 FDC 2115 chip.
