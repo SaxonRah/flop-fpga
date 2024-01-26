@@ -2,7 +2,7 @@
 After extensive research on PCIe, it simply isn't possible to have a floppy controller on pcie without custom software. Custom software would render a PCIe floppy controller useless as it would act like a usb floppy and not a native floppy drive connected to the motherboard. The native connection to the CPU is needed to take advantage of the pre-existing windows 7 - windows 11 5.25" floppy drivers, these original windows drivers are needed for omniflop to replace. 
 
 # Ideally omniflop and or fluxengine software would be used by the owner of said device.
-The only way I can see a 5.25" working on modern windows is an industrial motherboard and potentially the dISApointment mod using the TPM headers containing the LPC bus. Which most mobos likely require a bodge wire modification. Come can be simple, some can be difficult.
+The only way I can see a 5.25" working on modern windows is an industrial motherboard and potentially the dISApointment mod using the TPM headers containing the LPC bus. Which most mobos likely require a bodge wire modification. Some can be simple, some can be difficult.
 
 A motherboard with a working dISApointment mod might allow for a Monster FDC 8 Port ISA Floppy Controller, or Quad-Flop – 4 Port ISA Floppy Controller.
 
