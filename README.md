@@ -1,3 +1,8 @@
+# New lead - DB25 / Parallel port NEC98: 5.25" 1.2Mb external drive
+It's claimed that windows 7/10/11 legacy drivers exist for an external 5.25" drive via a DB25 connector / parallel port. I know the 5.25" external drives exist with a DB25, such as CMS Enhancements External 1.2MB Floppy Drive EF-360.
+
+In addition, the PC-9800 series has external 5.25" drives, i beleive both a dual and single drive, idk if in db25 though. It's where i think this stems from originally.. When DOS was competing with CP/M and NEC was able to dominate the market and ultimately resulted in said driver for windows support. Conjecture though
+
 # PCIe Floppy Drive Controller
 After extensive research on PCIe, it simply isn't possible to have a floppy controller on pcie without custom software. Custom software would render a PCIe floppy controller useless as it would act like a usb floppy and not a native floppy drive connected to the motherboard. The native connection to the CPU is needed to take advantage of the pre-existing windows 7 - windows 11 5.25" floppy drivers, these original windows drivers are needed for omniflop to replace. 
 
