@@ -8,6 +8,9 @@ A motherboard with a working dISApointment mod might allow for a Monster FDC 8 P
 
 Maybe, just maybe, a consumer modern motherboard with winblows will be able to talk to 5.25" and 3.5" disks over the omniflop driver via ISA through LPC bridged to eSPI.
 
+# ISA through LPC bridged to eSPI
+![ISA through LPC bridged to eSPI](https://github.com/SaxonRah/flop-fpga/blob/main/image.png)
+
 # LPC Spec
 Some mobos have ECE1200, W83626F, or F85226A, other chips too support LPC 1.1, which is the full ISA support, however the higher clocked ISA bus can have problems with slower clocked ISA cards. 
 
@@ -23,10 +26,6 @@ https://www.mouser.com/ProductDetail/Microchip-Technology/ECE1200-I-LD?qs=T3oQrp
 EV22J81A is the ECE1200 eSPI-to-LPC dev board, raw chips cost around 4 USD
 
 F85227N eSPI to LPC bridge chip.
-
-# ISA through LPC bridged to eSPI
-![ISA through LPC bridged to eSPI](https://github.com/SaxonRah/flop-fpga/blob/main/image.png)
-
 
 # most modern LPC supported mobo i could find 
 Asrock B650 LiveMixer motherboard - has special addon card (not released) that takes advantage of the eSPI/LPC bus to extend the motherboard and uses a NCT6686D chip on the mobo to supply LPC to eSPI.
