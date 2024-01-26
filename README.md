@@ -14,14 +14,23 @@ Drive12EMedia120Nec98,                 //  5.25" 1.2Mb externel drive; 1.2Mb   m
 
 Drive12EMedia123Nec98,                 //  5.25" 1.2Mb externel drive; 1.25Mb   media
 
-// 5.25" 1.2Mb externel drive
 
 MediaType; StepRateHeadUnloadTime; HeadLoadTime; MotorOffTime; SectorLengthCode; BytesPerSector; SectorsPerTrack; ReadWriteGapLength; FormatGapLength; FormatFillCharacter; HeadSettleTime; MotorSettleTimeRead; MotorSettleTimeWrite; MaximumTrack; CylinderShift; DataTransferRate; NumberOfHeads; DataLength; MediaByte; SkewDelta; 
 
 all UCHAR except USHORT (BytesPerSector, MotorSettleTimeRead, MotorSettleTimeWrite)
 
+// 5.25" 1.2Mb externel drive
+
 { F5_1Pt2_512,    0xbf, 0x32, 0x25, 0x2, 0x200, 0x0f, 0x1b, 0x54, 0xe5, 0xf, 1000, 1000, 0x4f, 0, 0x0, 0x2, 0xff, 0xf9, 0 }
+
 { F5_1Pt23_1024,  0xbf, 0x32, 0x25, 0x3, 0x400, 0x08, 0x35, 0x74, 0xe5, 0xf, 1000, 1000, 0x4c, 0, 0x0, 0x2, 0xff, 0xfe, 0 }
+
+
+// 5.25" 1.2Mb drive
+
+{ F5_1Pt2_512,  0xcf, 0x24, 0x25, 0x2, 0x200, 0x0f, 0x1b, 0x54, 0xe5, 0xf, 1000, 1000, 0x4f, 0, 0x0, 0x2, 0xff, 0xf9, 0 }
+
+{ F5_1Pt23_1024,0xcf, 0x24, 0x25, 0x3, 0x400, 0x08, 0x35, 0x74, 0xe5, 0xf, 1000, 1000, 0x4c, 0, 0x0, 0x2, 0xff, 0xfe, 0 }
 
 
 # PCIe Floppy Drive Controller
