@@ -24,6 +24,10 @@ EV22J81A is the ECE1200 eSPI-to-LPC dev board, raw chips cost around 4 USD
 
 F85227N eSPI to LPC bridge chip.
 
+# ISA through LPC bridged to eSPI
+![alt text]([https://github.com/SaxonRah/flop-fpga/image.png?raw=true)
+
+
 # most modern LPC supported mobo i could find 
 Asrock B650 LiveMixer motherboard - has special addon card (not released) that takes advantage of the eSPI/LPC bus to extend the motherboard and uses a NCT6686D chip on the mobo to supply LPC to eSPI.
 The Asrock X670E Taichi mobo also has a NCT6686D paired with NCT6796D Nuvoton LPC/eSPI SI/O
