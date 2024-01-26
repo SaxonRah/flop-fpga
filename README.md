@@ -35,6 +35,9 @@ all UCHAR except USHORT (BytesPerSector, MotorSettleTimeRead, MotorSettleTimeWri
 Google Translated
     // This file includes data and hardware declarations for the NEC PD765 (aka AT, ISA, and ix86) and Intel 82077 (aka MIPS) floppy driver for NT.
 
+# IBM 4869 External 5.25” Floppy Disk Drive with Parallel RS449 (37 pin) 
+pathway?
+
 # PCIe Floppy Drive Controller
 After extensive research on PCIe, it simply isn't possible to have a floppy controller on pcie without custom software. Custom software would render a PCIe floppy controller useless as it would act like a usb floppy and not a native floppy drive connected to the motherboard. The native connection to the CPU is needed to take advantage of the pre-existing windows 7 - windows 11 5.25" floppy drivers, these original windows drivers are needed for omniflop to replace. 
 
