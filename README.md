@@ -1,46 +1,35 @@
-# flop-fpga
-5.25" 5 1/4 fpga floppy controller. The c++ / verilog is pesudo code and an idea.
+# PCIe Floppy Drive Controller
+After extensive research on PCIe, it simply isn't possible to have a floppy controller on pcie without custom software. Custom software would render a PCIe floppy controller useless as it would act like a usb floppy and not a native floppy drive connected to the motherboard. The native connection to the CPU is needed to take advantage of the pre-existing windows 7 - windows 11 5.25" floppy drivers, these original windows drivers are needed for omniflop to replace. 
 
-Ideally omniflop and or fluxengine software would be used by the owner of said device.
+# Ideally omniflop and or fluxengine software would be used by the owner of said device.
+The only way I can see a 5.25" working on modern windows is an industrial motherboard and potentially the dISApointment mod using the TPM headers containing the LPC bus. Which most mobos likely require a bodge wire modification. Come can be simple, some can be difficult.
 
-Writing a modern 5.25" driver for each os would be the most difficult part i think. 
+A motherboard with a working dISApointment mod might allow for a Monster FDC 8 Port ISA Floppy Controller, or Quad-Flop – 4 Port ISA Floppy Controller.
 
-# starting point ?
-https://github.com/defparam/PCI2Nano-RTL
+Maybe, just maybe, a consumer modern motherboard with winblows will be able to talk to 5.25" and 3.5" disks over the omniflop driver via ISA through LPC bridged to eSPI.
 
-https://github.com/defparam/PCI2Nano-PCB
+# LPC Spec
+Some mobos have ECE1200, W83626F, or F85226A, other chips too support LPC 1.1, which is the full ISA support, however the higher clocked ISA bus can have problems with slower clocked ISA cards. 
 
-uses a de10 nano, but would be simple to change
+Some mobos only have the slower ISA bus supported on LPC.
 
-# Why
-because it's fun, plus a pcie 5.25" fpga floppy controller would be extremely useful. tweeners or inbetween era pcs are often used for 5.25" data archival. these are becoming more expensive and less of them are around.
+# Skylake+ cannot support LPC over TPM anymore because of architecture changes which resulted in chipset modifcation over to eSPI.
+https://web.archive.org/web/20230927192809/https://community.intel.com/t5/Embedded-Intel-Core-Processors/Anybody-to-know-why-Intel-change-LPC-bus-clock-from-33MHz-to/td-p/652673
 
-you could have a modern pc with a bunch of these pcie flopfpga's each connected to a floppy drive and have a nice multi disk archival system for 5.25" disks. which literally doesn't exist and is desperately needed in the world as magnetic media degrades and fails across it.
+# Skylake+ might still support LPC if mobo has chips for eSPI to LPC
+ECE1200 eSPI-to-LPC chip. "ECE1200 is a device designed to implement a Bridge function from an eSPI-configured Intel Chipset to a legacy downstream system, providing Master interfaces for an LPC bus, Serial IRQ and CLKRUN# features."
+https://www.mouser.com/ProductDetail/Microchip-Technology/ECE1200-I-LD?qs=T3oQrply3y%2FOHml1lyLW5w%3D%3D
 
-# what chip to use
-any fpga that can do it, obviously youll need a schematic / pcb with protection / level shifters for the floppy drive and maybe pcie bus? external ram would be useful for buffered 5.25" stuff.
+EV22J81A is the ECE1200 eSPI-to-LPC dev board, raw chips cost around 4 USD
 
-maybe use super io floppy disk controllers, but that has it's own set of problems, like lack of avalibility for one. 
+F85227N eSPI to LPC bridge chip.
 
-i looked for off the shelf floppy controllers like FDC37C78 or FDC37C669 on modern industrial ISA supported motherboards. but couldn't find one, they all use integrated chipsets. which makes sense.
+# most modern LPC supported mobo i could find 
+Asrock B650 LiveMixer motherboard - has special addon card (not released) that takes advantage of the eSPI/LPC bus to extend the motherboard and uses a NCT6686D chip on the mobo to supply LPC to eSPI.
+The Asrock X670E Taichi mobo also has a NCT6686D paired with NCT6796D Nuvoton LPC/eSPI SI/O
 
-# also dISApointment
-look into using the dISApointment tpm LPC bus to ISA adapter and maybe ISA floppy controllers would work.
-dma and irq are supported on the LPC bus on many 20 pin tpm pinouts, but may require hand soldering unpopulated lines on various mobos
+# PICMG 1.3
+PICMG 1.3 host cards sometimes have eSPI with LPC support via bridge chip.
 
-# other devices chips
-## deviceside has a custom 5025 FDC 2115 chip.
-asic? fpga? microcontroller?
-
-## greaseweasel v4 uses a ARTERY AT32F403  microcontroller
-https://www.arterychip.com/en/product/AT32F403.jsp
-
-## kryoflux uses a Atmel AT91SAM7S256 microcontroller
-https://www.microchip.com/en-us/product/at91sam7s256
-
-# why fpga if microcontrollers can do it
-support / expansion of the device for other drive types. plus a clearly defined PCB support revision outline can be argued: 5.25" -> 3.5" -> 8" -> others.
-
-sure the same could be said about micros but they often lack pin space and have limited memory and flash. 
-
-besides a pure verilog implementation with an open source driver for each os would be the best for an archival system that will last far in to the future.
+# Existance of POST Code Card for eSPI interface
+This to me reinforces the idea that a 5.25" floppy controller should be possible via eSPI to LPC bridge to ISA or LPC supported motherboard to ISA.
