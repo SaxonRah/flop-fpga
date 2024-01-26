@@ -9,6 +9,21 @@ fd50to34 https://gitlab.com/NF6X_Retrocomputing/fd50to34 can be used in reverse.
 
 c-bus https://www.reddit.com/r/pc98/wiki/c-bus/
 
+# uuuhh info from some dead japanese site about the floppy driver
+Drive12EMedia120Nec98,                 //  5.25" 1.2Mb externel drive; 1.2Mb   media
+
+Drive12EMedia123Nec98,                 //  5.25" 1.2Mb externel drive; 1.25Mb   media
+
+// 5.25" 1.2Mb externel drive
+
+MediaType; StepRateHeadUnloadTime; HeadLoadTime; MotorOffTime; SectorLengthCode; BytesPerSector; SectorsPerTrack; ReadWriteGapLength; FormatGapLength; FormatFillCharacter; HeadSettleTime; MotorSettleTimeRead; MotorSettleTimeWrite; MaximumTrack; CylinderShift; DataTransferRate; NumberOfHeads; DataLength; MediaByte; SkewDelta; 
+
+all UCHAR except USHORT (BytesPerSector, MotorSettleTimeRead, MotorSettleTimeWrite)
+
+{ F5_1Pt2_512,    0xbf, 0x32, 0x25, 0x2, 0x200, 0x0f, 0x1b, 0x54, 0xe5, 0xf, 1000, 1000, 0x4f, 0, 0x0, 0x2, 0xff, 0xf9, 0 }
+{ F5_1Pt23_1024,  0xbf, 0x32, 0x25, 0x3, 0x400, 0x08, 0x35, 0x74, 0xe5, 0xf, 1000, 1000, 0x4c, 0, 0x0, 0x2, 0xff, 0xfe, 0 }
+
+
 # PCIe Floppy Drive Controller
 After extensive research on PCIe, it simply isn't possible to have a floppy controller on pcie without custom software. Custom software would render a PCIe floppy controller useless as it would act like a usb floppy and not a native floppy drive connected to the motherboard. The native connection to the CPU is needed to take advantage of the pre-existing windows 7 - windows 11 5.25" floppy drivers, these original windows drivers are needed for omniflop to replace. 
 
