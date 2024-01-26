@@ -25,7 +25,7 @@ EV22J81A is the ECE1200 eSPI-to-LPC dev board, raw chips cost around 4 USD
 F85227N eSPI to LPC bridge chip.
 
 # ISA through LPC bridged to eSPI
-![alt text]([https://github.com/SaxonRah/flop-fpga/image.png?raw=true)
+![ISA through LPC bridged to eSPI](https://github.com/SaxonRah/flop-fpga/blob/main/image.png)
 
 
 # most modern LPC supported mobo i could find 
